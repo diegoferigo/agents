@@ -163,7 +163,7 @@ class ParallelPyEnvironment(py_environment.PyEnvironment):
       ]
     return unstacked_actions
 
-  def seed(self, seeds):
+  def _seed(self, seeds):
     """Seeds the parallel environments."""
     if len(seeds) != len(self._envs):
       raise ValueError(

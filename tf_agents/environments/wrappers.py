@@ -62,6 +62,9 @@ class PyEnvironmentBaseWrapper(py_environment.PyEnvironment):
   def _step(self, action):
     return self._env.step(action)
 
+  def _seed(self, seed):
+    return self._env.seed(seed)
+
   def observation_spec(self):
     return self._env.observation_spec()
 

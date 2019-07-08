@@ -226,8 +226,7 @@ class PyEnvironment(object):
     Args:
       seed: Value to use as seed for the environment.
     """
-    del seed  # unused
-    raise NotImplementedError('No seed support for this environment.')
+    return self._seed(seed)
 
   #  These methods are to be implemented by subclasses:
 
@@ -247,5 +246,13 @@ class PyEnvironment(object):
     """Starts a new sequence, returns the first `TimeStep` of this sequence.
 
     See `reset(self)` docstring for more details
+    """
+
+  @abc.abstractmethod
+  def _seed(self, seed):
+    """Seeds the environment.
+
+    Args:
+      seed: Value to use as seed for the environment.
     """
 

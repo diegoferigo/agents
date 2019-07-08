@@ -170,6 +170,9 @@ class GymWrapper(py_environment.PyEnvironment):
     else:
       return ts.transition(observation, reward, self._discount)
 
+  def _seed(self, seed):
+    return self._gym_env.seed(seed)
+
   def _to_obs_space_dtype(self, observation):
     """Make sure observation matches the specified space.
 
